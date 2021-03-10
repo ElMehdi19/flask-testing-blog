@@ -1,6 +1,6 @@
 from flask import request
 from app import app
-from app.decorators import is_json
+from app.decorators import is_json, validate_json
 
 
 @app.route('/')
@@ -10,5 +10,6 @@ def home():
 
 @app.route('/service', methods=['POST'])
 @is_json
+@validate_json
 def service():
     return {'success': True}
