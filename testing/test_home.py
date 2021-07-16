@@ -16,7 +16,7 @@ def test_home(client: FlaskClient):
     assert resp.json.get('message', 'Hello Flask')
 
 
-def test_home_wrong_http_method(client: FlaskClient):
+def test_home_bad_http_method(client: FlaskClient):
     """should return a Method Not Allowed response"""
     resp = client.post('/')
     assert resp.status_code == 405
