@@ -1,4 +1,3 @@
-from flask import request
 from app import app
 from app.decorators import is_json, validate_json
 
